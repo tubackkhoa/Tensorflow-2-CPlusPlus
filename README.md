@@ -17,3 +17,18 @@ Usage:
 4. Have fun
 
 ![DEMO](demo.png)
+
+## Tensorflow build
+
+```bash
+# C++
+./configure
+bazel build //tensorflow:libtensorflow_cc.so
+
+# copy to system
+mkdir /usr/local/include/tf
+cp -r bazel-genfiles /usr/local/include/tf/
+cp -r tensorflow /usr/local/include/tf/
+cp -r third_party /usr/local/include/tf/
+cp bazel-bin/tensorflow/libtensorflow_* /usr/local/lib/
+```
